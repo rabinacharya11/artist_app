@@ -12,8 +12,16 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Carts"),
-        actions: [Text("Total Items: ${cartProducts.length}")],
+        title: const Text("My Cart"),
+        actions: [
+          Center(
+              child: Text(
+            "Total Items: ${cartProducts.length}",
+          )),
+          SizedBox(
+            width: 10,
+          )
+        ],
       ),
       body: Column(
         children: [
@@ -26,7 +34,7 @@ class CartScreen extends StatelessWidget {
               ),
               trailing: IconButton(
                 onPressed: (() => {}),
-                icon: Icon(
+                icon: const Icon(
                   Icons.remove_circle,
                 ),
                 color: Colors.red,

@@ -3,6 +3,7 @@ import 'package:artist_app/core/widgets/product_tiles.dart';
 import 'package:artist_app/helpers/cached_image_helper.dart';
 import 'package:artist_app/home/domain/product_data.dart';
 import 'package:artist_app/home/domain/silder_images.dart';
+import 'package:artist_app/home/presentation/cart_screen.dart';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,25 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'ArtHub',
+          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
+        ),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => CartScreen()));
+              },
+              icon: Icon(
+                Icons.shopping_cart,
+                color: CollorPallet.textColor,
+              ))
+        ],
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -43,6 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       )
                       .toList(),
                   options: CarouselOptions(
+                    autoPlay: true,
                     onPageChanged: (page, _) {
                       setState(() {
                         _currentImage = page;

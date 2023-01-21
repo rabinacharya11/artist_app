@@ -22,13 +22,12 @@ class Category {
 
 List<Product> products = [
   Product(
-      name: 'Shawl',
+      name: 'Shawl1',
       description: '',
       image:
           'https://i0.wp.com/handicraftsinnepal.com/wp-content/uploads/2021/02/YS36.jpg?fit=1500%2C1000&ssl=1',
       discountOff: 10,
       price: 4000),
- 
 ];
 List<Product> cartProducts = [
   Product(

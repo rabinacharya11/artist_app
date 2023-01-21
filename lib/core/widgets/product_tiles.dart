@@ -42,13 +42,9 @@ class CategoryProductTile extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Banner(
-                          message: "",
-                          location: BannerLocation.topEnd,
-                          child: CustomCacheImage(
-                            url: sliderImages[0],
-                            fit: BoxFit.cover,
-                          ),
+                        CustomCacheImage(
+                          url: sliderImages[0],
+                          fit: BoxFit.cover,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 8.0, top: 8.0),
@@ -82,7 +78,8 @@ class CategoryProductTile extends StatelessWidget {
                           child: Container(
                             height: 40,
                             width: 180,
-                            color: Colors.red,
+                            color: CollorPallet.buttonColor,
+                            child: Center(child: Text('Add to Cart')),
                           ),
                         )
                       ],
